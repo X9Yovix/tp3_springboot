@@ -1,5 +1,6 @@
 package net.javaguides.springboot.service;
 
+import net.javaguides.springboot.exception.ResourceNotFoundException;
 import net.javaguides.springboot.model.Employee;
 import net.javaguides.springboot.repository.EmployeeRepository;
 
@@ -25,7 +26,7 @@ public class EmployeeServiceImp implements EmployeeService {
 
     @Override
     public Employee getEmployeeByID(long id) {
-        return this.empRepo.findById(id).orElseThrow();
+        return this.empRepo.findById(id).orElseThrow( () -> new ResourceNotFoundException("Employee","ID",id));
     }
 
     @Override
