@@ -3,9 +3,11 @@ package net.javaguides.springboot.service;
 import net.javaguides.springboot.exception.ResourceNotFoundException;
 import net.javaguides.springboot.model.Employee;
 import net.javaguides.springboot.repository.EmployeeRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmployeeServiceImp implements EmployeeService {
 
     private EmployeeRepository empRepo;
